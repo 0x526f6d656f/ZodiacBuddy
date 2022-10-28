@@ -33,6 +33,11 @@ namespace ZodiacBuddy
         public bool BraveEchoTarget { get; set; } = true;
 
         /// <summary>
+        /// Gets or sets a value indicating whether to teleport to the aetheryte if we are already in the same zone.
+        /// </summary>
+        public bool WantSameTerritoryTeleport { get; set; } = false;
+
+        /// <summary>
         /// Gets the configuration for bonus light options.
         /// </summary>
         public BonusLightConfiguration BonusLight { get; } = new();

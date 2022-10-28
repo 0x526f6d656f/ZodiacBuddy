@@ -118,7 +118,12 @@ internal partial class AtmaManager : IDisposable
         foreach (var aetheryte in telepo->TeleportList.Span)
         {
             if (aetheryte.AetheryteId == aetheryteID)
+            {
+                if (aetheryte.TerritoryId == Service.ClientState.TerritoryType & !Service.Configuration.WantSameTerritoryTeleport)
+                    return false;
+
                 return telepo->Teleport(aetheryteID, 0);
+            }
         }
 
         Service.Plugin.PrintError("Could not teleport, not attuned.");

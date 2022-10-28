@@ -189,6 +189,13 @@ namespace ZodiacBuddy
                 Service.Configuration.Save();
             }
 
+            var sameTerritoryTeleport = Service.Configuration.WantSameTerritoryTeleport;
+            if (ImGui.Checkbox("Teleport to nearest aetheryte if already on the same map", ref sameTerritoryTeleport))
+            {
+                Service.Configuration.WantSameTerritoryTeleport = sameTerritoryTeleport;
+                Service.Configuration.Save();
+            }
+
             ImGui.Spacing();
         }
 
