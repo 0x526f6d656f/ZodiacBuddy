@@ -211,7 +211,7 @@ internal partial class AtmaManager : IDisposable
             var sb = new SeStringBuilder()
                 .AddText("Target selected: ")
                 .AddUiForeground(62)
-                .AddText(selectedTarget.Name)
+                .AddText(selectedTarget.Name.ToTitleCase())
                 .AddUiForegroundOff();
 
             if (index == 3) // leves
